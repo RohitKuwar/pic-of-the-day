@@ -1,4 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
+  font-family: 'Karla',
+  sans-serif;
+}
+.heading{
+  padding: .3em 0.2em;
   text-align: center;
-  background-color: aquamarine;
+}
+.secondRow{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4.3em;
+  text-align: center;
+}
+.secondRow input{
+  margin-right: .7em;
+  padding: .1em;
+}
+.secondRow a button{
+  cursor: pointer;
+}
+img{
+  display: block;
+  margin: auto;
+  margin-top: 1em;
+}
+.explanation{
+  text-align: justify;
+  padding: 1em 4.3em 0.2em 4.3em;
+}
+.explain{
+  font-weight: bolder;
+}
+.date{
+  margin-top: .5em;
+  text-align: center;
+}
+.copyright{
+  margin-top: 1em;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .heading{
+    font-size: 1.4em;
+  }
+  .title{
+    font-size: .9em;
+    padding: .5em 0;
+  }
+  .secondRow{
+    flex-direction: column;
+  }
+  .secondRow button{
+    margin-top: .7em;
+  }
+  .explanation{
+    padding: .4em;
+  }
 }
