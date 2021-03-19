@@ -11,20 +11,30 @@ function App() {
     let API_KEY = '9yhr0T7TI7SzN4IxOOeZxs5yCMu2Yi0t7UNMGKQy';
     fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`)
       .then(res => res.json())
-      .then(r => {
-        setDate(r.date)
-        setTitle(r.title)
-        setImage(r.url)
-        setExplanation(r.explanation)
+      .then(res => {
+        setDate(res.date)
+        setTitle(res.title)
+        setImage(res.url)
+        setExplanation(res.explanation)
       })
   },[date],[title],[image],[explanation])
 
   return (
     <div>
-      <h2>{date}</h2>
-      <h2>{title}</h2>
-      <img src={image} alt="" width="90%" height="auto" />
-      <p>{explanation}</p>
+      <h1 className={styles.heading}>Astronomy Picture of the Day</h1>
+      <div className={styles.secondRow}>
+        <h2 className={styles.title}>{title}</h2>
+        <div className={styles.searchBox}>
+          <input type="text"/>
+          <a href="!#"><button>Search</button></a>
+        </div>
+      </div>
+      <img src={image} alt="pic of the day" width="90%" height="auto" />
+      <p className={styles.explanation}>
+        <span className={styles.explain}>Explanation:</span> {explanation}
+        </p>
+      <h3 className={styles.date}>{date}</h3>
+      <h6 className={styles.copyright}>&#169; Image Copyright by NASA. All rights reserved</h6>
     </div>
   )
 }
