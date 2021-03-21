@@ -1,0 +1,10 @@
+.heading {
+  padding: .3em 0.2em;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 1.4em;
+  }
+}
